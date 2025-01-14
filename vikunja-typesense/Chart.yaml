@@ -1,0 +1,14 @@
+apiVersion: v2
+appVersion: 0.23.0
+description: Typesense is an open source, typo tolerant search engine that delivers fast and relevant results out-of-the-box.
+home: https://typesense.org/
+icon: https://raw.githubusercontent.com/typesense/typesense/main/assets/typesense_logo.svg
+keywords:
+- search
+maintainers:
+- email: hmphu.it@gmail.com
+  name: hmphu
+name: typesense
+sources:
+- https://github.com/typesense/typesense
+version: 0.1.6
