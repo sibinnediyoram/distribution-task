@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vikunja-config
+data:
+  config.yml: |
+    # property-like keys; each key maps to a simple value
+    # Vikunja needs to know the frontend URL for password reset emails.
+    # So you might need to provide its value, if you're not using an ingress.
+    service:
+      frontendUrl: http://vikunja.local
+    typesense:
+      # Typesense will only work if it is enabled below (typesense.enabled).
+      url: "{{ .Values.env.VIKUNJA_TYPESENSE_HOST }}:80"
+      apiKey: "{{ .Values.env.TYPESENSE_API_KEY }}"
+    redis:
+      # Redis will only work if it is enabled below (redis.enabled).
+      host: "{{ .Values.env.VIKUNJA_REDIS_HOST }}:6379"
+      db: "{{ .Release.Name }}"
